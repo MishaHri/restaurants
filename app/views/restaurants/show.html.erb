@@ -1,3 +1,6 @@
+<h2> Id: <%= @restaurant.id %>
 <h2> Welcome to <%= @restaurant.name %>
 <p> Rating: <%= "⭐" * @restaurant.rating %></p>
 <p> Located in: <%= @restaurant.address %></p>
+
+<%= button_to "Destroy this restaurant", @restaurant_select_all, method: :delete %>

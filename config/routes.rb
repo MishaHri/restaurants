@@ -8,8 +8,10 @@ Rails.application.routes.draw do
 
   get "restaurants/new", to:"restaurants#new"
 
- post "restaurants", to: "restaurants#create"
+  post "restaurants", to: "restaurants#create"
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
+  delete "restaurants/:id", to: "restaurants#delete"
+  delete "restaurants", to: "restaurants#delete_all"
 
 end
