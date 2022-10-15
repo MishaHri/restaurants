@@ -5,6 +5,12 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   get "restaurants", to: "restaurants#index"
-  get "restaurants/:id", to: "restaurants#show"
-  
+
+  get "restaurants/new", to:"restaurants#new"
+
+  post "resturants", to: "restaurants#create"
+
+  get "restaurants/:id", to: "restaurants#show", as: :restaurant
+
+
 end
