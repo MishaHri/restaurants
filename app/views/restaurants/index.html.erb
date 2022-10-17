@@ -2,8 +2,9 @@
 
   <ul>
   <% @restaurants.each do |restaurant| %>
-    <li><%= restaurant.name %></li>
+    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
   <% end %>
   </ul>
+  <%= link_to "Create new one", restaurants_new_path %>
 
-<%= button_to "Delete all", @restaurant, method: :delete%>
+<%# <%= button_to "Delete all", @restaurant, method: :delete%>

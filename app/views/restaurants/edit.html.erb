@@ -1,11 +1,5 @@
 <h2>Edit <strong><%= @restaurant.name %></strong></h2>
 
-<%= form_for @restaurant do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :address %>
-  <%= f.text_field :address %>
-  <%= f.label :rating %>
-  <%= f.number_field :rating %>
-  <%= f.submit %>
-<% end %>
+<h1> Add your restaurant here</h1>
+
+<%= render "form", restaurant: @restaurant %>

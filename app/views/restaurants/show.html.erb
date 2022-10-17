@@ -3,6 +3,9 @@
 <p> Rating: <%= "⭐" * @restaurant.rating %></p>
 <p> Located in: <%= @restaurant.address %></p>
 
+
+<%= link_to "Back to all resturants", restaurants_path %>
+
 <%= link_to "Delete",
   restaurant_path(@restaurant),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
