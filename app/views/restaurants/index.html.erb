@@ -1,9 +1,9 @@
 <h1>All restaurants</h1>
 
-<ol>
+  <ul>
   <% @restaurants.each do |restaurant| %>
-  <%= restaurant.name %>
+    <li><%= restaurant.name %></li>
   <% end %>
-</ol>
+  </ul>
 
-<%= button_to "Destroy all restaurant", @restaurant, method: :delete %>
+<%= button_to "Delete all", @restaurant, method: :delete%>

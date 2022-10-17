@@ -6,12 +6,18 @@ Rails.application.routes.draw do
 
   get "restaurants", to: "restaurants#index"
 
-  get "restaurants/new", to:"restaurants#new"
+  get "restaurants/new", to:"restaurants#new", as: :new_resturant
 
   post "restaurants", to: "restaurants#create"
+
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
-  delete "restaurants/:id", to: "restaurants#delete"
-  delete "restaurants", to: "restaurants#delete_all"
+  get"restaurants/:id/edit", to: "restaurants#edit", as: :edit_resturant
+
+  patch "restaurants/:id", to:"restaurants#update"
+
+  delete "restaurants/:id", to: "restaurants#destroy"
+
+  delete "restaurants", to: "restaurants#destroy_all"
 
 end
