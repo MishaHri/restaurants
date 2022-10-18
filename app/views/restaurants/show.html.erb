@@ -1,3 +1,5 @@
+ <div class = "container">
+
  <% @restaurant.id %>
 <h2> Welcome to <%= @restaurant.name %>
 <p> Rating: <%= "⭐" * @restaurant.rating %></p>
@@ -10,3 +12,4 @@
   restaurant_path(@restaurant),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+</div>

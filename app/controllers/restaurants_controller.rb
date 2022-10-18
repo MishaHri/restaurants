@@ -12,6 +12,11 @@ end
       @restaurant = Restaurant.new
   end
 
+
+  def top
+    @restaurants = Restaurant.where(rating: 5)
+  end
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.save

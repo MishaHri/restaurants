@@ -1,10 +1,12 @@
 <h1>All restaurants</h1>
 
+<div class ="container">
   <ul>
   <% @restaurants.each do |restaurant| %>
     <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
   <% end %>
   </ul>
   <%= link_to "Create new one", restaurants_new_path %>
+</div>
 
 <%# <%= button_to "Delete all", @restaurant, method: :delete%>
