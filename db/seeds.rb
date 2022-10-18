@@ -15,7 +15,7 @@ puts "Craeting new restaurants"
 100.times do
   restaurant= Restaurant.create(
     name: Faker::Restaurant.name ,
-    address:Faker::Address.full_address ,
+    address: Faker::Address.postcode,
     rating: rand(1..5)
   )
 puts "Restaurant with id: #{restaurant.id} has been created"
