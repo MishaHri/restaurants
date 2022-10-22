@@ -20,4 +20,12 @@ Rails.application.routes.draw do
   delete "restaurants/:id", to: "restaurants#destroy"
 
   delete "restaurants", to: "restaurants#destroy_all"
+
+  get "reviews", to: "reviews#index"
+  post "reviews", to: "reviews#create"
+
+  get "restaurants/:id/reviews/new", to: "reviews#new", as: :review_restaurant
+  delete "reviews/:id", to: "reviews#destroy"
+
+
 end
