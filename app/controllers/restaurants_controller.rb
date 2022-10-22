@@ -17,6 +17,11 @@ end
     @restaurants = Restaurant.where(rating: 5)
   end
 
+  def chef
+    @restaurant =Restaurant.find(params[:id])
+    @chef_name = @restaurant.chef_name
+  end
+
   def create
     @restaurant = Restaurant.new(restaurant_params)
     @restaurant.save
@@ -26,6 +31,9 @@ end
   def edit
    @restaurant = Restaurant.find(params[:id])
   end
+
+
+
 
   def update
     @restaurant = Restaurant.find(params[:id])
@@ -48,8 +56,10 @@ end
 
 
   private
+
+
   def restaurant_params
-    params.require(:restaurant).permit(:name, :rating, :address)
+    params.require(:restaurant).permit(:name, :address, :rating)
   end
 
 end

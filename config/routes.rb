@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   post "restaurants", to: "restaurants#create"
   get "restaurants/new", to:"restaurants#new"
   get "restaurants/top", to: "restaurants#top", as: :top_resturants
+
+  get "restaurants/:id/chef", to: "restaurants#chef", as: :chef_restaurant
+
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
+
   get"restaurants/:id/edit", to: "restaurants#edit", as: :edit_resturant
   patch "restaurants/:id", to:"restaurants#update"
 
