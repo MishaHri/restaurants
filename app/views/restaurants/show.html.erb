@@ -4,14 +4,51 @@
 <h2> Welcome to <%= @restaurant.name %>
 <p> Rating: <%= "⭐" * @restaurant.rating %></p>
 <p> Located in: <%= @restaurant.address %></p>
+<%= link_to "See chef", chef_restaurant_path %>
+<br>
+<br>
 
+<p><strong>Reviews</strong></p>
+<ul class="list-group">
+  <% @restaurant.reviews.each do |review| %>
+    <li class="list-group-item"><%= review.content %></li>
+  <% end %>
+</ul>
+<br>
+
+<li class="list-group-item">
+  <%= review.content %>
+  <%= link_to "Delete",
+    review_path(review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</li>
+
+
+  <%# <%= link_to"add review", review_restaurant_path(@restaurant) %>
+  <%# <ul class = "list-group">
+    <% @restaurant.review.each do |review| %>
+    <%# <li class="list-group-item"><%= review.content %></li>
+  <%# <% end %>
+<%# </ul> %>
+<%# <br> %>
+
+<%# <li class="list-group-item">
+  <%= reviews.content %>
+  <%# <%= link_to "Delete",
+    review_path(review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+<%# </li> %>
 
 <%= link_to "Back to all resturants", restaurants_path %>
-<%= link_to "Edit", edit_resturant_path(@restaurant)%>
-<%= link_to "See chef", chef_restaurant_path %>
 
+<%= link_to "Edit", edit_resturant_path(@restaurant)%>
+<br>
+<br>
 <%= link_to "Delete",
   restaurant_path(@restaurant),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
 %>
+
 </div>
