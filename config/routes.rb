@@ -12,6 +12,11 @@ Rails.application.routes.draw do
 
   get "restaurants/:id/chef", to: "restaurants#chef", as: :chef_restaurant
 
+
+  post "restaurants/resturant_id/reviews", to: "reviews#create"
+  get "restaurants/:id/reviews/new", to: "reviews#new", as: :new_restaurant_review
+
+
   get "restaurants/:id", to: "restaurants#show", as: :restaurant
 
   get"restaurants/:id/edit", to: "restaurants#edit", as: :edit_resturant
@@ -19,13 +24,12 @@ Rails.application.routes.draw do
 
   delete "restaurants/:id", to: "restaurants#destroy"
 
-  delete "restaurants", to: "restaurants#destroy_all"
+  # delete "reviews/:id", to: "reviews#destroy"
+  # delete "restaurants", to: "restaurants#destroy_all"
 
-  get "reviews", to: "reviews#index"
-  post "reviews", to: "reviews#create"
+   resources :reviews, only: [:destroy]
 
-  get "restaurants/:id/reviews/new", to: "reviews#new", as: :review_restaurant
-  delete "reviews/:id", to: "reviews#destroy"
+
 
 
 end

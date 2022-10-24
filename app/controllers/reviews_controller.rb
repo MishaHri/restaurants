@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    @review.save
   end
 
   def create
@@ -31,7 +32,7 @@ class ReviewsController < ApplicationController
   end
 
   def review_params
-    params_require(:review).permit(:content)
+    params.require(:review).permit(:content)
   end
 
 end
